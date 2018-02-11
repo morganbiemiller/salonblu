@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Salon Blu</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"> -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300i,400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <div class="top-nav">
+        <div class="top-nav__logo"><img src="imgs/logo-trans.png"></div>
+        <div class="top-nav__list top-nav__list--desktop">
+          <div href="#services" class="top-nav__li">Services</div>
+          <div href="#work" class="top-nav__li">Work</div>
+          <div href="#contact" class="top-nav__li">Contact</div>
+        </div>
+
+        <div class="top-nav__list top-nav__list--mobile">
+          <img v-on:click="navMenu = !navMenu" class="top-nav__toggle" src="imgs/menu.png">
+          <div class="top-nav__dropdown" v-if="navMenu">
+            <div href="#services" class="top-nav__li">Services</div>
+            <div href="#work" class="top-nav__li">Work</div>
+            <div href="#contact" class="top-nav__li">Contact</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="landing" class="landing">
+        <div class="landing-content">
+          <div class="landing-img"><img src="imgs/logo-trans.png"></div>
+          <div class="landing-info">
+            <div>288 Culver Parkway</div>
+            <div>Rochester, NY 14609</div>
+            <div>585-482-4247</div>
+          </div>
+        </div>
+
+        <div class="landing-word-wrapper landing-word-wrapper--right">
+          <div class="landing-word">
+            <div class="landing-word-inner">
+              <span>style</span>
+              <span>confidence</span>
+              <span>spunk</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="landing-word-wrapper landing-word-wrapper--left">
+          <div class="landing-word">
+            <div class="landing-word-inner">
+              <span>beauty</span>
+              <span>fearlessness</span>
+              <span>detail</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="services" class="services section">
+        <h1>Services</h1>
+        <div class="section-container">
+          <h2>Hair Design</h2>
+          <div class="description">Wash, Cut and Style</div>
+          <div class="service">
+            <p>Women</p>
+            <p>$50</p>
+          </div>
+          <div class="service">
+            <p>Men</p>
+            <p>$30</p>
+          </div>
+          <div class="service">
+            <p>Children under 12</p>
+            <p>$20</p>
+          </div>
+          <div class="service">
+            <p>Over 12</p>
+            <p>$30-$35</p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h2>Color Services</h2>
+          <div class="service">
+            <p>Virgin Application, Single Process</p>
+            <p>$65</p>
+          </div>
+          <div class="service">
+            <p>Root Retouch</p>
+            <p>$55</p>
+          </div>
+          <div class="service">
+            <p>Root Retouch with Color Balance</p>
+            <p>$60</p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h2>Highlighting/Lowlighting</h2>
+          <div class="service">
+            <p>Full Head Application</p>
+            <p>$85</p>
+          </div>
+          <div class="service">
+            <p>Half Head Application</p>
+            <p>45</p>
+          </div>
+          <div class="service">
+            <p>Partial Head Application</p>
+            <p>$5/Foil</p>
+          </div>
+          <div class="service">
+            <p>Balayage</p>
+            <p>$45+</p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h2>Keratin Treatments</h2>
+          <p class="description">Smoothing system that infuses keratin deep into the hair cuticle eliminatingup to 95% of frizz and curl from the hair, leaving the hair soft and shiny. (Consultation Required)</p>
+
+          <div class="service">
+            <p>Cezzanne Smoothing Treatment</p>
+            <p>$250+ Per Consultation Based on Hair Length</p>
+          </div>
+          <div class="service">
+            <p>Coppola Smoothing Treatment</p>
+            <p>$250+ Per Consultation Based on Hair Length</p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h2>Formal Styling</h2>
+          <div class="service">
+            <p>Shampoo and Blowdry</p>
+            <p>$35</p>
+          </div>
+          <div class="service service--add-on">
+            <p>Add On Curling or Flat Iron</p>
+            <p>$10</p>
+          </div>
+          <div class="service">
+            <p>Updo/Formal Occasion/Styling/Braiding</p>
+            <p>$60+</p>
+          </div>
+          <div class="service">
+            <p>Bridal Styling
+              <small>Includes 2 Appointments, Trial and Day Of</small></p>
+            <p>$125</p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h2>Hair Extensions Coming Soon!</h2>
+        </div>
+
+        <div class="section-container">
+          <h2>Waxing Service</h2>
+          <div class="description">Available by consultation only</div>
+        </div>
+      </div>
+
+      <div class="outsite-photo"><img src="imgs/outside.jpg"></div>
+
+      <div id="about" class="section about">
+        <h1>About Us</h1>
+      </div>
+
+      <div class="reviews">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fjennifer.w.quinn%2Fposts%2F10211347603862614%3A0&show_text=true&appId=207480596389737" scrolling="no" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Florry.egan%2Fposts%2F2335125816713553%3A0" scrolling="no" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmegan.eisermann%2Fposts%2F10103202924351328%3A0" scrolling="no" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fliz.trimble.9%2Fposts%2F10208810991732480%3A0" scrolling="no" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1956644921289339%26id%3D100008315494937%26substory_index%3D0" scrolling="no" allowTransparency="true"></iframe>
+      </div>
+
+      <div id="contact" class="contact section">
+      </div>
+
+      <div class="map">
+        <div id="map"></div>
+      </div>
+
+      <div id="footer" class="footer">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/SalonBluStyle/" class="social-icon"><i class="fa fa-facebook"></i></a>
+          <a href="mailto:lisa.salonblu@gmail.com?Subject=Hello" target="_top" class="social-icon"><i class="fa fa-envelope-o"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          navMenu: false
+        },
+
+        methods: {
+        }
+      });
+    </script>
+
+    <script src="js/app.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwzKuc6OCjCsinowbzpTPaBgzniAazKew&callback=initMap"></script>
+
+  </body>
+</html>
