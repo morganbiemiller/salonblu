@@ -3,22 +3,22 @@ function initMap() {
   var styledMapType = new google.maps.StyledMapType(
     [
       {
-          "featureType": "administrative",
-          "elementType": "labels.text.fill",
-          "stylers": [
-              {
-                  "color": "#444444"
-              }
-          ]
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#444444"
+          }
+        ]
       },
       {
-          "featureType": "landscape",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "color": "#f2f2f2"
-              }
-          ]
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+          {
+            "color": "#f2f2f2"
+          }
+        ]
       },
       {
           "featureType": "poi",
@@ -96,3 +96,20 @@ function initMap() {
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
 }
+
+
+jQuery(function($) {
+  var $nav = $('.top-nav');
+  var $win = $(window);
+  var winH = $(window).height() - 90;   // Get the window height.
+
+  $win.on("scroll", function () {
+    if ($(this).scrollTop() > winH ) {
+      $nav.addClass("top-nav--shadow");
+    } else {
+      $nav.removeClass("top-nav--shadow");
+    }
+  }).on("resize", function(){ // If the user resizes the window
+    winH = $(this).height(); // you'll need the new height value
+  });
+});

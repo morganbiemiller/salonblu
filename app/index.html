@@ -13,29 +13,47 @@
     <meta name="keywords" content="keywords,here">
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"> -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300i,400,600" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-scrollto"></script>
   </head>
   <body>
-
     <div id="app">
       <div class="top-nav">
         <div class="top-nav__logo"><img src="imgs/logo-trans.png"></div>
         <div class="top-nav__list top-nav__list--desktop">
-          <div href="#services" class="top-nav__li">Services</div>
-          <div href="#work" class="top-nav__li">Work</div>
-          <div href="#contact" class="top-nav__li">Contact</div>
+          <a href="#" v-scroll-to="'#services'" class="top-nav__li">Services</a>
+          <!-- <a href="#" v-scroll-to="'#work'" class="top-nav__li">Work</a> -->
+          <a href="#" v-scroll-to="'#reviews'" @click="closeNavMenu" class="top-nav__li top-nav__li-reviews">Reviews</a>
+          <a href="#" v-scroll-to="'#mapWrapper'" class="top-nav__li">Contact</a>
         </div>
 
         <div class="top-nav__list top-nav__list--mobile">
           <img v-on:click="navMenu = !navMenu" class="top-nav__toggle" src="imgs/menu.png">
           <div class="top-nav__dropdown" v-if="navMenu">
-            <div href="#services" class="top-nav__li">Services</div>
-            <div href="#work" class="top-nav__li">Work</div>
-            <div href="#contact" class="top-nav__li">Contact</div>
+              <a href="#" v-scroll-to="'#services'" @click="closeNavMenu" class="top-nav__li">Services</a>
+              <!-- <a href="#" v-scroll-to="'#work'" @click="closeNavMenu" class="top-nav__li">Work</a> -->
+              <!-- <a href="#" v-scroll-to="'#reviews'" @click="closeNavMenu" class="top-nav__li">Reviews</a> -->
+              <a href="#" v-scroll-to="'#mapWrapper'" @click="closeNavMenu" class="top-nav__li">Contact</a>
           </div>
+        </div>
+      </div>
+
+      <div
+        class="cta"
+        :class="{ 'cta--animate': showNumber, 'cta--show': scrolled }">
+        <!-- <div class="cta__mobile" style="display: none">
+          <a href="tel:1-585-482-4247">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div> -->
+        
+        <div class="cta__web" v-on:click="showNumber = !showNumber">
+          <i class="fas fa-phone"></i>
+          <span>585-482-4247</span>
         </div>
       </div>
 
@@ -64,7 +82,7 @@
             <div class="landing-word-inner">
               <span>beauty</span>
               <span>fearlessness</span>
-              <span>detail</span>
+              <span>character</span>
             </div>
           </div>
         </div>
@@ -74,7 +92,7 @@
         <h1>Services</h1>
         <div class="section-container">
           <h2>Hair Design</h2>
-          <div class="description">Wash, Cut and Style</div>
+          <p class="description">Wash, Cut and Style</p>
           <div class="service">
             <p>Women</p>
             <p>$50</p>
@@ -174,50 +192,88 @@
         </div>
       </div>
 
-      <div class="outsite-photo"><img src="imgs/outside.jpg"></div>
+      <div class="outsite-photo section section--full-width"><img src="imgs/outside.jpg"></div>
 
-      <div id="about" class="section about">
+      <!-- <div id="about" class="section about">
         <h1>About Us</h1>
+      </div> -->
+
+      <div id="reviews" class="reviews section section--full-width">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fjennifer.w.quinn%2Fposts%2F10211347603862614%3A0&width=500" width="500" height="354" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmegan.eisermann%2Fposts%2F10103202924351328%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fliz.trimble.9%2Fposts%2F10208810991732480%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Florry.egan%2Fposts%2F2335125816713553%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1956644921289339%26id%3D100008315494937%26substory_index%3D0&width=500" width="500" height="354" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
       </div>
 
-      <div class="reviews">
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fjennifer.w.quinn%2Fposts%2F10211347603862614%3A0&show_text=true&appId=207480596389737" scrolling="no" allowTransparency="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Florry.egan%2Fposts%2F2335125816713553%3A0" scrolling="no" allowTransparency="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmegan.eisermann%2Fposts%2F10103202924351328%3A0" scrolling="no" allowTransparency="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fliz.trimble.9%2Fposts%2F10208810991732480%3A0" scrolling="no" allowTransparency="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1956644921289339%26id%3D100008315494937%26substory_index%3D0" scrolling="no" allowTransparency="true"></iframe>
-      </div>
-
-      <div id="contact" class="contact section">
-      </div>
-
-      <div class="map">
+      <div id="mapWrapper" class="map">
         <div id="map"></div>
       </div>
 
       <div id="footer" class="footer">
+        <div class="footer__contact">
+          <div>288 Culver Parkway</div>
+          <div>Rochester, NY 14609</div>
+          <a href="tel:1-585-482-4247">585-482-4247</a>
+        </div>
         <div class="social-icons">
-          <a href="https://www.facebook.com/SalonBluStyle/" class="social-icon"><i class="fa fa-facebook"></i></a>
-          <a href="mailto:lisa.salonblu@gmail.com?Subject=Hello" target="_top" class="social-icon"><i class="fa fa-envelope-o"></i></a>
+          <a href="https://www.facebook.com/SalonBluStyle/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:lisa.salonblu@gmail.com?Subject=Hello" class="social-icon"><i class="far fa-envelope"></i></a>
         </div>
       </div>
     </div>
 
     <script>
+      VueScrollTo.setDefaults({
+        container: "body",
+        duration: 500,
+        easing: "ease",
+        offset: -140,
+        cancelable: false,
+        onCancel: false,
+        x: false,
+        y: true
+      })
       new Vue({
         el: '#app',
         data: {
-          navMenu: false
+          navMenu: false,
+          showNumber: false,
+          showNumberCTA: false,
+          scrolled: false
+        },
+        
+        created () {
+          window.addEventListener('scroll', this.handleScroll);
+        },
+
+        destroyed () {
+          window.removeEventListener('scroll', this.handleScroll);
         },
 
         methods: {
+          handleScroll () {
+            if((window.scrollY < 200)) {
+              this.scrolled = false;
+            } else {
+              this.scrolled = true;
+            }
+          },
+
+          closeNavMenu() {
+            this.navMenu = false;
+          }
         }
       });
+      
     </script>
 
-    <script src="js/app.js"></script>
-
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwzKuc6OCjCsinowbzpTPaBgzniAazKew&callback=initMap"></script>
 
+    <script src="js/app.js"></script>
   </body>
 </html>
