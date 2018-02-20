@@ -295,6 +295,10 @@ h1 {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(172, 173, 171, 0.15);
   display: none;
+
+  @media(max-width: 768px) {
+    right: -8px;
+  }
 }
 
 .cta--show {
@@ -322,13 +326,28 @@ h1 {
 .cta__mobile {
   width: 100%;
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 
   span {
     margin-left: 10px;
+  }
+}
+
+.cta__mobile {
+  display: flex;
+
+  @media(min-width: 768px) {
+    display: none;
+  }
+}
+
+.cta__web {
+  display: none;
+
+  @media(min-width: 768px) {
+    display: flex;
   }
 }
 
@@ -360,6 +379,11 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+
+  h1 {
+    flex: 0 0 100%;
+    margin: 0 0 40px;
+  }
 
   iframe {
     width: 100%;
