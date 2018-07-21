@@ -26,7 +26,7 @@
         <div class="top-nav__logo"><img src="imgs/logo-trans.png"></div>
         <div class="top-nav__list top-nav__list--desktop">
           <a href="#" v-scroll-to="'#services'" class="top-nav__li">Services</a>
-          <!-- <a href="#" v-scroll-to="'#work'" class="top-nav__li">Work</a> -->
+          <a href="#" v-scroll-to="'#meetUs'" class="top-nav__li">Meet Us</a>
           <a href="#" v-scroll-to="'#reviews'" @click="closeNavMenu" class="top-nav__li top-nav__li-reviews">Our Dear Clients</a>
           <a href="#" v-scroll-to="'#mapWrapper'" class="top-nav__li">Contact</a>
         </div>
@@ -35,7 +35,7 @@
           <img v-on:click="navMenu = !navMenu" class="top-nav__toggle" src="imgs/menu.png">
           <div class="top-nav__dropdown" v-if="navMenu">
               <a href="#" v-scroll-to="'#services'" @click="closeNavMenu" class="top-nav__li">Services</a>
-              <!-- <a href="#" v-scroll-to="'#work'" @click="closeNavMenu" class="top-nav__li">Work</a> -->
+              <a href="#" v-scroll-to="'#meetUs'" @click="closeNavMenu" class="top-nav__li">Meet Us</a>
               <!-- <a href="#" v-scroll-to="'#reviews'" @click="closeNavMenu" class="top-nav__li">Reviews</a> -->
               <a href="#" v-scroll-to="'#mapWrapper'" @click="closeNavMenu" class="top-nav__li">Contact</a>
           </div>
@@ -50,7 +50,7 @@
             <i class="fas fa-phone"></i>
           </a>
         </div>
-        
+
         <div class="cta__web" v-on:click="showNumber = !showNumber">
           <i class="fas fa-phone"></i>
           <span>585-482-4247</span>
@@ -189,14 +189,71 @@
         <div class="section-container">
           <h2>Waxing Service</h2>
           <div class="description">Available by consultation only</div>
+          <div class="service">
+            <p>Eyebrows</p>
+            <p>$18</p>
+          </div>
+          <div class="service">
+            <p>Chin</p>
+            <p>$12</p>
+          </div>
+          <div class="service">
+            <p>Lip & Chin</p>
+            <p>$20</p>
+          </div>
+          <div class="service">
+            <p>Brow, Lip & Chin</p>
+            <p>$38</p>
+          </div>
+        </div>
+        <div class="about__products">
+          <div>
+            <img src="imgs/products1.png">
+          </div>
+          <div>
+            <img src="imgs/products2.png">
+          </div>
+          <div>
+            <img src="imgs/products4.png">
+          </div>
+          <div>
+            <img src="imgs/products3.png">
+          </div>
         </div>
       </div>
 
-      <div class="outsite-photo section section--full-width"><img src="imgs/outside.jpg"></div>
+      <!-- <div class="outsite-photo section section--full-width"><img src="imgs/outside.jpg"></div> -->
 
-      <!-- <div id="about" class="section about">
-        <h1>About Us</h1>
-      </div> -->
+      <div id="meetUs" class="section about">
+        <h1>Meet Us</h1>
+        <div class="about__group about__group--salon">
+          <div class="about__img">
+            <img src="imgs/salon.png">
+          </div>
+          <div class="about__info">
+            <h2>The Salon</h2>
+            <p>Salon Blu is a charming salon in the Culver Parkway Neighborhood of East Irondequoit. We love our neighborhood and the people in it. We carry the Moroccanoil line for and strive to use only the best products on your hair. Are doors are always open to new clients but we can't always gaurantee walk-ins so calling ahead for an appointment is recommended.</p>
+          </div>
+        </div>
+        <div class="about__group about__group--lisa">
+          <div class="about__info">
+            <h2>Lisa Pampinella</h2>
+            <p>After 33 years in the salon industry I am proud to say I have opened my first salon! Salon Blu came about because of my desire to provide my clients with a beautiful, professional, relaxed salon atmosphere.  I take great pleasure meeting new people, each with a unique story, and creating looks they never thought they could have. It is important to me that my clients are able to recreate their style at home.  I enjoy attending continuing education classes and am committed to keeping up with the latest styles and trends.  I hold certifications in Loreal Professional Color and Cezzane Keratin Treatments, as well as being fully committed the Moroccan Oil and Loma hair care lines. My promise to you is you will always enjoy your time in my chair.</p>
+          </div>
+          <div class="about__img">
+            <img src="imgs/lisa.png">
+          </div>
+        </div>
+        <div class="about__group">
+          <div class="about__img">
+            <img src="imgs/viv.png">
+          </div>
+          <div class="about__info">
+            <h2>Vivian Borreggine</h2>
+            <p>Come in, sit down, we are going to be friends.... It's the Italian way. With 20 years of salon experience, I will be honest to whomever sits in my chair.  I will educate you so you can achieve your personal style. Come and relax and enjoy the Salon Blu experience.</p>
+          </div>
+        </div>
+      </div>
 
       <div id="reviews" class="reviews section">
         <h1>Our Dear Clients</h1>

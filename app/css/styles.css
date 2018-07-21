@@ -416,6 +416,106 @@ h1 {
     display: flex;
   }
 }
+.about__group--lisa {
+  flex-direction: column-reverse;
+}
+@media (min-width: 800px) {
+  .about__group--lisa {
+    flex-direction: row;
+  }
+}
+.about__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+.about__group .about__img {
+  flex: 0 0 100%;
+}
+.about__group .about__img img {
+  border: 1px solid #abacaa54;
+}
+.about__group .about__info {
+  flex: 0 0 100%;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+@media (min-width: 800px) {
+  .about__group {
+    flex-wrap: nowrap;
+  }
+  .about__group .about__img {
+    flex: 1;
+  }
+  .about__group .about__img img {
+    border: 1px solid #abacaa54;
+  }
+  .about__group .about__img:first-child {
+    margin-right: 50px;
+  }
+  .about__group .about__img:last-child {
+    margin-left: 50px;
+  }
+  .about__group .about__info {
+    flex: 2;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+}
+.about__group--salon {
+  display: flex;
+}
+.about__group--salon .about__img {
+  flex: 0 0 100%;
+}
+.about__group--salon .about__info {
+  flex: 0 0 100%;
+}
+@media (min-width: 800px) {
+  .about__group--salon {
+    flex-wrap: nowrap;
+  }
+  .about__group--salon .about__img {
+    flex: 2;
+  }
+  .about__group--salon .about__img img {
+    border: 1px solid #abacaa54;
+  }
+  .about__group--salon .about__img:first-child {
+    margin-right: 50px;
+  }
+  .about__group--salon .about__img:last-child {
+    margin-left: 50px;
+  }
+  .about__group--salon .about__info {
+    flex: 2;
+    margin-bottom: 0;
+    line-height: 30px;
+  }
+}
+.about__products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about__products > div {
+  flex: 0 0 49%;
+}
+.about__products > div img {
+  border: 1px solid #abacaa54;
+}
+@media (min-width: 800px) {
+  .about__products > div {
+    flex: 1;
+  }
+  .about__products > div:nth-child(1),
+  .about__products > div:nth-child(2),
+  .about__products > div:nth-child(3) {
+    margin: 0 20px 0 0;
+  }
+}
 .map {
   width: 100%;
   position: relative;
